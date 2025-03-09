@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -112,20 +112,20 @@ const ContactSection = () => {
               <div className="mt-auto">
                 <h4 className="font-bold mb-4">Connect with me</h4>
                 <div className="flex gap-3">
-                  {["github", "linkedin", "twitter"].map((platform, index) => (
+                  {[
+                    { name: "github", icon: Github },
+                    { name: "linkedin", icon: Linkedin },
+                    { name: "twitter", icon: Twitter }
+                  ].map((platform) => (
                     <motion.a
-                      key={platform}
-                      href={`https://${platform}.com`}
+                      key={platform.name}
+                      href={`https://${platform.name}.com`}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
                       className="p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
                     >
-                      <img 
-                        src={`https://cdn.simpleicons.org/${platform}/333`} 
-                        alt={platform} 
-                        className="w-5 h-5" 
-                      />
+                      <platform.icon className="w-5 h-5 text-gray-800" />
                     </motion.a>
                   ))}
                 </div>

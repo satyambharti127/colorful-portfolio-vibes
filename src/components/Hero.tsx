@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Github, Linkedin, ArrowRight, Cpu, Database, LineChart } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -50,9 +49,6 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span className="inline-block mb-3 py-1 px-3 rounded-full text-xs font-medium bg-accent/10 text-accent">
-                Computer Science Engineer & Data Scientist
-              </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
                 Hello, I'm <span className="text-gradient">Satyam Bharti</span>
               </h1>

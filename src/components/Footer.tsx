@@ -1,6 +1,5 @@
-
 import { motion } from 'framer-motion';
-import { Code } from 'lucide-react';
+import { Code, Linkedin, Twitter, Github, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -12,27 +11,28 @@ const Footer = () => {
             <div className="md:col-span-2">
               <Link to="/" className="flex items-center gap-2 mb-4">
                 <Code size={28} className="text-accent" />
-                <span className="text-xl font-bold tracking-tight">Satyam.dev</span>
+                <span className="text-xl font-bold tracking-tight">Satyam</span>
               </Link>
               <p className="text-gray-400 mb-6 max-w-md">
                 Computer Science Engineer with Data Science expertise. 
                 Passionate about creating impactful digital solutions and uncovering insights from data.
               </p>
               <div className="flex space-x-4">
-                {["github", "linkedin", "twitter", "instagram"].map((platform) => (
+                {[
+                  { name: "github", icon: Github },
+                  { name: "linkedin", icon: Linkedin },
+                  { name: "twitter", icon: Twitter },
+                  { name: "instagram", icon: Instagram }
+                ].map((platform) => (
                   <motion.a
-                    key={platform}
-                    href={`https://${platform}.com`}
+                    key={platform.name}
+                    href={`https://${platform.name}.com`}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -5 }}
                     className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
                   >
-                    <img 
-                      src={`https://cdn.simpleicons.org/${platform}/fff`} 
-                      alt={platform} 
-                      className="w-5 h-5" 
-                    />
+                    <platform.icon className="w-5 h-5 text-white" />
                   </motion.a>
                 ))}
               </div>

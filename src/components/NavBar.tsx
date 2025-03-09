@@ -40,10 +40,10 @@ const NavBar = () => {
           </motion.div>
           <motion.span 
             className="text-xl font-bold tracking-tight"
-            whileHover={{ color: 'hsl(var(--accent))' }}
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            Satyam.dev
+            Satyam
           </motion.span>
         </Link>
         
